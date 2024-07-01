@@ -1,7 +1,14 @@
-import React from "react";
+import { Box } from "@radix-ui/themes";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
-const Loading = () => {
-  return <div>Loading...</div>;
+const NewIssueLoading = () => {
+  return (
+    <Box>
+      <Skeleton />
+      <Skeleton height="20rem" />
+    </Box>
+  );
 };
 
-export default Loading;
+export default NewIssueLoading;

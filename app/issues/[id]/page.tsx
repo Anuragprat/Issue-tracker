@@ -15,6 +15,7 @@ const IssueDescription = async ({ params }: Props) => {
     },
   });
   if (!issues) notFound();
+
   return (
     <div>
       <Heading>{issues.title}</Heading>
