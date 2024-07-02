@@ -4,11 +4,11 @@ import React from "react";
 
 const statusMap: Record<
   Status,
-  { label: string; color: "red" | "green" | "violet" }
+  { label: string; color: "crimson" | "yellow" | "blue" }
 > = {
-  OPEN: { label: "Open", color: "red" },
-  IN_PROGRESS: { label: "In Progress", color: "violet" },
-  CLOSED: { label: "Closed", color: "green" },
+  OPEN: { label: "Open", color: "crimson" },
+  IN_PROGRESS: { label: "In Progress", color: "blue" },
+  CLOSED: { label: "Closed", color: "yellow" },
 };
 
 const StatusBadge = ({ status }: { status: Status }) => {

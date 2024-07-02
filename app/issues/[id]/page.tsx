@@ -1,10 +1,9 @@
-import StatusBadge from "@/app/components/StatusBadge";
 import prisma from "@/prisma/client";
-import { Box, Button, Card, Flex, Grid, Heading, Text } from "@radix-ui/themes";
+import { Box, Flex, Grid } from "@radix-ui/themes";
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
-import { ButtonIcon, Pencil2Icon } from "@radix-ui/react-icons";
-import Link from "next/link";
+import EditIssueButton from "./EditIssueButton";
+import IssueDetails from "./IssueDetails";
+import DeleteIssueButton from "./DeleteIssueButton";
 interface Props {
   params: {
     id: string;
@@ -17,24 +16,16 @@ const IssueDescription = async ({ params }: Props) => {
     },
   });
   if (!issues) notFound();
-
   return (
-    <Grid columns={{ initial: "1", md: "2" }} gap="5">
-      <Box>
-        <Heading>{issues.title}</Heading>
-        <Flex gap={"4"} my={"4"}>
-          <StatusBadge status={issues.status} />
-          <Text>{issues.createdAt.toDateString()}</Text>
-        </Flex>
-        <Card className="prose" mt="4">
-          <ReactMarkdown>{issues.description}</ReactMarkdown>
-        </Card>
+    <Grid columns={{ initial: "1", sm: "5" }} gap="5">
+      <Box className="md:col-span-4">
+        <IssueDetails issues={issues} />
       </Box>
       <Box>
-        <Button>
-          <Pencil2Icon />
-          <Link href={`/issues/${issues.id}/edit`}>Edit Issue</Link>
-        </Button>
+        <Flex direction="column" gap="4">
+          <EditIssueButton IssueId={issues.id} />
+          <DeleteIssueButton IssueId={issues.id} />
+        </Flex>
       </Box>
     </Grid>
   );

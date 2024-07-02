@@ -1,7 +1,7 @@
 import IssueFormSkeleton from "@/app/components/IssueFormSkeleton";
 
-const NewIssueLoading = () => {
+const EditIssueLoading = () => {
   return <IssueFormSkeleton />;
 };
 
-export default NewIssueLoading;
+export default EditIssueLoading;
