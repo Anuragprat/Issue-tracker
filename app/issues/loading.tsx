@@ -2,7 +2,7 @@ import { Table } from "@radix-ui/themes";
 import { Skeleton } from "@/app/components";
 import IssueActions from "./IssueActions";
 
-const loading = () => {
+const IssueActionloading = () => {
   const issues = [1, 2, 3, 4, 5];
   return (
     <div>
@@ -42,4 +42,4 @@ const loading = () => {
   );
 };
 
-export default loading;
+export default IssueActionloading;
