@@ -7,7 +7,7 @@ const IssueDetails = ({ issues }: { issues: Issue }) => {
   return (
     <>
       <Heading>{issues.title}</Heading>
-      <Flex gap={"4"} my={"4"}>
+      <Flex className="space-x-3" my="2">
         <StatusBadge status={issues.status} />
         <Text>{issues.createdAt.toDateString()}</Text>
       </Flex>
