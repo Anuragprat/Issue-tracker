@@ -2,7 +2,6 @@ import { validschema } from "@/app/validationSchems";
 import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
-
 export async function PATCH(
   request: NextRequest,
   {
