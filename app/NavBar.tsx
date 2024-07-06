@@ -1,5 +1,5 @@
 "use client";
-
+import { Skeleton } from "@/app/components";
 import { Avatar, Box, DropdownMenu, Flex, Text } from "@radix-ui/themes";
 import classNames from "classnames";
 import Link from "next/link";
@@ -11,8 +11,6 @@ import { useSession } from "next-auth/react";
 const NavBar = () => {
   const path = usePathname();
   const { data: session, status } = useSession();
-
-  console.log(path);
   const links = [
     { label: "Dashboard", href: "/" },
     { label: "Issues", href: "/issues/list" },
@@ -43,6 +41,7 @@ const NavBar = () => {
         </Flex>
         <Flex>
           <Box>
+            {status === "loading" && <Skeleton width={"3rem"} />}
             {status === "authenticated" && (
               <DropdownMenu.Root>
                 <DropdownMenu.Trigger>
