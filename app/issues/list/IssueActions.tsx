@@ -5,7 +5,7 @@ import IssueStatusList from "./IssueStatusList";
 
 const IssueActions = () => {
   return (
-    <Flex mb={"5"} justify={"between"}>
+    <Flex justify={"between"}>
       <IssueStatusList />
       <Button>
         <Link href="/issues/new">New Issue</Link>
